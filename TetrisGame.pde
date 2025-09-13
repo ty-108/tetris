@@ -77,7 +77,10 @@ class TetrisGame {
   public void updateScore(int rows) {
     score += lineClearPoints[rows] * level;
     highscore = Math.max(score, highscore);
-    if(lines % 10 + rows >= 10) level++;
+    if(lines % 10 + rows >= 10) {
+      level++;
+      updateSpeed(level);
+    }
     lines += rows;
   }
   
@@ -91,17 +94,11 @@ class TetrisGame {
     highscore = Math.max(score, highscore);
   }
   
-  // update rate at which pieces drop
-  // currently time-based, can switch to level-based as well
+  // update rate at which pieces drop based on level
   // customizable based on player's skill
-  public void updateSpeed() {
-    if(tick <= 3000) {
-      speed -= 4;
-    } else if(tick <= 5400) {
-      speed -= 3;
-    } else if(tick <= 7800) {
-      speed -= 2;
-    }
+  public void updateSpeed(int level) {
+    double time = Math.pow((0.8 - ((level - 1) * 0.007)), level - 1);
+    speed = (int) (time * 60);
   }
   
   // set fallingPiece to nextPiece

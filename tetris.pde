@@ -125,8 +125,6 @@ void draw() {
         curGame.updateScore(false);
       }
     }
-    
-    if(tick % 600 == 0) curGame.updateSpeed(); // update speed every 10 seconds
   }
 }
 
@@ -184,5 +182,6 @@ void keyPressed() {
       curGame.updateScore(true);
     }
     curGame.getFallingPiece().tempShift(0, 1);
+    tick = (tick + speed - 1) / speed * speed - 1;
   }
 }
