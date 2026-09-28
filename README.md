@@ -7,4 +7,4 @@ Controls are the same as most Tetris variations: up to rotate, left/right/down t
 
 Have fun!
 
-<img width="2760" height="1854" alt="tetris game demo" src="https://github.com/user-attachments/assets/fd5d48d9-a899-4c8a-868e-2471827fa35f" />
+<img width="2760" height="1854" alt="tetris game demo 4" src="https://github.com/user-attachments/assets/14b7094a-e388-4755-b5e7-dbeed00d0d3b" />
